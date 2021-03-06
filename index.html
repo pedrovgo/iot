@@ -1,0 +1,116 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="theme.js"></script>
+        <script src="utils.js"></script>
+        <script src="config.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <nav style="height: 52px; line-height: 52px;">
+            <div class="nav-wrapper black teal"> 
+                <ul id="nav-mobile" class="left">
+                    <li>
+                        <div class="menu-icon" onclick="toggleSidebar()">
+                            <span class="menu-icon-item"></span>
+                            <span class="menu-icon-item"></span>
+                            <span class="menu-icon-item"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="sidebar" class="sidebar col-md-3">
+            <div class="container">
+                <div class="row">
+                    <span class="pointer clean-filter center" onclick="cleanFilter()">Remover filtros</span>
+                </div>
+                <div class="row">
+                    <div id="filters"></div>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <h4 style="margin: 15px">MONITORAMENTO RESIDENCIAL</h4>
+        </div>
+        <div class="horizontal-padding">
+            <div class="row">
+                <div style="width: 100%">
+                    <div class="row">
+                        <div class="col-md-9 no-padding">  
+                            <div class="row">
+                                <div class="col-md-5 no-padding">
+                                    <div id="totais" class="row">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <i class="medium material-icons right">assignment_turned_in</i>
+                                                </td>
+                                                <td>
+                                                    <div class="row">
+                                                        <span>TOTAL EM VENDAS</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <!-- <span class="info-1" id="total_vendas"></span> -->
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="medium material-icons right">attach_money</i>
+                                                </td>
+                                                <td>
+                                                    <div class="row">
+                                                        <span>TOTAL EM GUELTAS</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <!-- <span class="info-1" id="total_comissoes"></span> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 no-padding">
+                                            <!-- <div id="distribuicao_por_linha" class="max-width"></div> -->
+                                        </div>        
+                                    </div>
+                                </div>
+                                <div class="col-md-7 no-padding">
+                                    <div class="row">
+                                        <div class="col-md-6 no-padding">
+                                            <!-- <div id="top_5_produtos" class="max-width"></div> -->
+                                        </div>
+                                        <div class="col-md-6 no-padding">
+                                            <!-- <div id="top_4_lojas" class="max-width"></div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 no-padding">
+                                    <div id="desempenho_mensal" class="max-width"></div>
+                                </div>
+                                <div class="col-md-4 no-padding">
+                                    <!-- <div id="desempenho_semanal" class="max-width"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 no-padding">
+                            <!-- <div id="total_por_promotora" class="max-width"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

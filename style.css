@@ -1,0 +1,116 @@
+body{
+    background-color: #2a2a2b;
+    color: #E0E0E3;
+    font-family: 'Unica One', sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.row{
+    margin: 0px;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.horizontal-padding{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pointer{
+    cursor:pointer
+}
+
+.filter-section{
+    height: 90px;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding: 1em 1em;
+}
+
+.ui-widget {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+}
+.ui-helper-reset {
+    width: 100%;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.menu-icon {
+    position: absolute;
+    left:20px;
+    top:9px;
+    cursor: pointer;
+}
+
+.menu-icon-item{
+    display:block;
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    margin:5px 0px;
+}
+
+.sidebar {
+    margin:0px;
+    padding: 0px;
+    font-family: sans-serif;
+    position: fixed;
+    height: 100%;
+    background: #5f5f5f;
+    opacity: 0;
+    transition: all 400ms linear;
+    overflow: hidden;
+    z-index:-1000;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    z-index: 10000;
+    margin-top: 6px;
+    margin-left: 3px;
+    pointer-events: unset;
+    opacity: 1;
+    position: relative;
+}
+
+.max-width{
+    width: 100%;
+}
+
+.clean-filter{
+    font-style: italic;
+    text-decoration: underline;
+    margin: 10px;
+}
+
+.right{
+    float: right;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+.padding-top{
+    padding-top: 10px;
+}
+
+.info-1{
+    font-size: 30px;
+}
+
+.line-height{
+    line-height: 1;
+}
