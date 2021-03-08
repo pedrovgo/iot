@@ -301,28 +301,29 @@ function getData(from){
             "match_all": {}
         }
     };
+
+    $.ajax({
+        url: appData.url,
+        type: "GET",
+        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', localStorage.getItem('token'));},
+        success: function(data) {
+            appData.total = data.length;
+                appData.array = data;
+
+                appData.filtered = appData.filtered.concat(appData.array);
     
-    $.get(appData.url, null, function( data ) {
-        appData.total = data.length;
-        // for(var i=0; i < data.hits.hits.length; i++){
-            appData.array = data;
-        // }
-        // if( (from + appData.size) < appData.total) {
-        //     getData(from + appData.size);
-        
-        // } else {
-            appData.filtered = appData.filtered.concat(appData.array);
-
-            var filters = {};
-            for(var filter in appData.filters){
-                filters[filter] = appData.array.map(z=>z[filter]).filter(distinct).sort();
-            }
-
-            configFilter(filters);
-            chartRender();
-            $( "#filters" ).accordion();
-        // }
-    });
+                var filters = {};
+                for(var filter in appData.filters){
+                    filters[filter] = appData.array.map(z=>z[filter]).filter(distinct).sort();
+                    appData[filter] = filters[filter];
+                }
+                
+                appDataInit();
+                configFilter(filters);
+                chartRender();
+                $( "#filters" ).accordion();
+        }
+     });
 }
 
 function chartRender() {

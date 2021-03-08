@@ -42,71 +42,50 @@
             </div>
         </div>
         <div class="center">
-            <h4 style="margin: 15px">MONITORAMENTO RESIDENCIAL</h4>
+            <h4 style="margin: 15px">CONSUMO DE ENERGIA</h4>
+            <!-- <i class="medium material-icons right">lightbulb_outline</i> -->
         </div>
         <div class="horizontal-padding">
             <div class="row">
                 <div style="width: 100%">
                     <div class="row">
-                        <div class="col-md-9 no-padding">  
+                        <div id="device-list" class="col-md-2">
+                            
+                        </div>
+                        <div class="col-md-10 no-padding">
                             <div class="row">
-                                <div class="col-md-5 no-padding">
-                                    <div id="totais" class="row">
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <i class="medium material-icons right">assignment_turned_in</i>
-                                                </td>
-                                                <td>
-                                                    <div class="row">
-                                                        <span>TOTAL EM VENDAS</span>
-                                                    </div>
-                                                    <div class="row">
-                                                        <!-- <span class="info-1" id="total_vendas"></span> -->
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <i class="medium material-icons right">attach_money</i>
-                                                </td>
-                                                <td>
-                                                    <div class="row">
-                                                        <span>TOTAL EM GUELTAS</span>
-                                                    </div>
-                                                    <div class="row">
-                                                        <!-- <span class="info-1" id="total_comissoes"></span> -->
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 no-padding">
-                                            <!-- <div id="distribuicao_por_linha" class="max-width"></div> -->
-                                        </div>        
-                                    </div>
+                                <div class="col-md-2">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <i class="medium material-icons right">power</i>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <span>CONSUMO TOTAL</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="info-1" id="consumo_total"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
-                                <div class="col-md-7 no-padding">
-                                    <div class="row">
-                                        <div class="col-md-6 no-padding">
-                                            <!-- <div id="top_5_produtos" class="max-width"></div> -->
-                                        </div>
-                                        <div class="col-md-6 no-padding">
-                                            <!-- <div id="top_4_lojas" class="max-width"></div> -->
-                                        </div>
-                                    </div>
+                                <div class="col-md-6 no-padding">
+                                    <div id="por_mes" class="max-width"></div>
+                                </div>
+                                <div class="col-md-4 no-padding">
+                                    <div id="por_device" class="max-width"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 no-padding">
-                                    <div id="desempenho_mensal" class="max-width"></div>
+                                    <div id="por_hora_do_dia" class="max-width"></div>
                                 </div>
                                 <div class="col-md-4 no-padding">
-                                    <!-- <div id="desempenho_semanal" class="max-width"></div> -->
-                                </div>
+                                    <div id="por_dia_da_semana" class="max-width"></div>
+                                </div>  
                             </div>
-                        </div>
-                        <div class="col-md-3 no-padding">
-                            <!-- <div id="total_por_promotora" class="max-width"></div> -->
                         </div>
                     </div>
                 </div>
