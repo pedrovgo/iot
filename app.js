@@ -7,23 +7,27 @@ $(function() {
     if(localStorage.getItem('token') == null) {
         
         var login = prompt("Informe seu login.");
-        var senha = prompt("Informe sua senha.");
+        var senha;
 
-        $.ajax({
-            type: "POST",
-            url: "https://pedrovgo91-iot.herokuapp.com/login",
-            data: JSON.stringify({login:login, senha:senha}),
-            headers:{"Content-Type":"application/json"},
-            success: function(data, textStatus, request){
-                //console.log('data', data);
-            },
-            error: function(error) {
-                localStorage.setItem('token', error.getResponseHeader('Authorization'));
-                getData(0);
-                tid = setInterval(loopDevices, 2500);
-            },
-            dataType: "json"
-        });
+        if(login)
+            senha = prompt("Informe sua senha.");
+
+        if(senha)
+            $.ajax({
+                type: "POST",
+                url: "https://pedrovgo91-iot.herokuapp.com/login",
+                data: JSON.stringify({login:login, senha:senha}),
+                headers:{"Content-Type":"application/json"},
+                success: function(data, textStatus, request){
+                    //console.log('data', data);
+                },
+                error: function(error) {
+                    localStorage.setItem('token', error.getResponseHeader('Authorization'));
+                    getData(0);
+                    tid = setInterval(loopDevices, 2500);
+                },
+                dataType: "json"
+            });
 
     } else {
         getData(0);
