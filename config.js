@@ -85,6 +85,7 @@ function appDataInit(){
         }
     };
     appData.filters = {
+        data:[],
         mes:[],
         dia:[],
         hora:[],
