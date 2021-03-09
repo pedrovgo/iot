@@ -58,12 +58,17 @@ function build(){
                             .filter(d => d[appData.dictionary[x].dimension] == category && d[s] == item);
                         var value = 0;
                         for(var d=0; d < dataFiltered.length; d++){
-                            if(appData.dictionary[x].grouping == groupSum){
+                            if(appData.dictionary[x].grouping == groupSum || appData.dictionary[x].grouping == groupAvg){
                                 value += Number(dataFiltered[d][appData.dictionary[x].fact]);
                             } else {
                                 value++;
                             }
                         }
+
+                        if(appData.dictionary[x].grouping == groupAvg) {
+                            value = value / dataFiltered.length;
+                        }
+
                         serie.data.push(value);
                     }
                     appData.dictionary[x].stackedData.push(serie);
