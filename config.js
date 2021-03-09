@@ -1,7 +1,7 @@
 function setOptions(){
     appData.options = {
         por_hora_do_dia:newChart().setId('por_hora_do_dia').setType('area')
-            .setTitle('Consumo Médio por Horário').setX().setY('Consumo')
+            .setTitle('Consumo Médio por Horário').setX().setY('Consumo (kW/h)')
             .setTooltipStacked().setPlotOptions().setStackedSeries(),
         por_dia_da_semana:newChart().setId('por_dia_da_semana').setType('pie')
             .setTitle('Consumo Total Semanal').setX()
@@ -10,7 +10,7 @@ function setOptions(){
             .setTitle('Consumo Total Mensal').setX().setY('Consumo')
             .setTooltipStacked().setPlotOptions().setStackedSeries(),
         por_device:newChart().setId('por_device').setType('bar')
-            .setTitle('Consumo Total por Aparelho').setX().setY('Consumo')
+            .setTitle('Consumo Total por Aparelho').setX().setY('Consumo (kW/h)')
             .setTooltipStacked().setPlotOptions().setStackedSeries()
     };
 }
