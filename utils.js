@@ -107,6 +107,10 @@ function build(){
     }
 }
 
+function groupAvg(array, dimension, fact) {
+    return groupIncrement(array, dimension, fact, 'AVG');
+}
+
 function groupSum(array, dimension, fact) {
     return groupIncrement(array, dimension, fact, 'SUM');
 }
@@ -117,6 +121,7 @@ function groupCount(array, dimension, fact) {
 
 function groupIncrement(array, dimension, fact, type) {
     var dic = {};
+    var count = {};
     var ret = [];
 
     for(var i=0; i < array.length; i++){
@@ -125,14 +130,23 @@ function groupIncrement(array, dimension, fact, type) {
 
         if(dic[dim] == undefined){
             dic[dim] = 0;
+            count[dim] = 0;
         }
-        if(type == 'SUM'){
+
+        if(type == 'SUM' || type == 'AVG'){
             dic[dim] += Number(array[i][fact]);
+            count[dim]++;
         } else {
             dic[dim]++;
         }
     }
+
     for(var property in dic){
+
+        if(type == 'AVG'){
+            dic[property] = dic[property] / count[property];
+        }
+
         ret.push([property,dic[property]]);
     }
 

@@ -1,16 +1,16 @@
 function setOptions(){
     appData.options = {
         por_hora_do_dia:newChart().setId('por_hora_do_dia').setType('area')
-            .setTitle('Por Horário').setX().setY('Consumo')
+            .setTitle('Consumo Médio por Horário').setX().setY('Consumo')
             .setTooltipStacked().setPlotOptions().setStackedSeries(),
         por_dia_da_semana:newChart().setId('por_dia_da_semana').setType('pie')
-            .setTitle('Semanal').setX()
+            .setTitle('Consumo Total Semanal').setX()
             .setTooltipPercentage().setPlotOptions().setSeries('device').setDrilldown(),
         por_mes:newChart().setId('por_mes').setType('column')
-            .setTitle('Mensal').setX().setY('Consumo')
+            .setTitle('Consumo Total Mensal').setX().setY('Consumo')
             .setTooltipStacked().setPlotOptions().setStackedSeries(),
         por_device:newChart().setId('por_device').setType('bar')
-            .setTitle('Por Aparelho').setX().setY('Consumo')
+            .setTitle('Consumo Total por Aparelho').setX().setY('Consumo')
             .setTooltipStacked().setPlotOptions().setStackedSeries()
     };
 }
@@ -21,7 +21,7 @@ function appDataInit(){
         por_hora_do_dia: {
             dimension:'hora',
             fact:'valor', 
-            grouping:groupSum, 
+            grouping:groupAvg, 
             sorting:dimensionAscComparer,
             stack:{
                 device: appData.device ? appData.device : []
