@@ -7,7 +7,7 @@ function setOptions(){
             .setTitle('Consumo Total Semanal').setX()
             .setTooltipPercentage().setPlotOptions().setSeries('device').setDrilldown(),
         por_mes:newChart().setId('por_mes').setType('column')
-            .setTitle('Consumo Total Mensal').setX().setY('Consumo')
+            .setTitle('Consumo Total Mensal').setX().setY('Consumo (kW/h)')
             .setTooltipStacked().setPlotOptions().setStackedSeries(),
         por_device:newChart().setId('por_device').setType('bar')
             .setTitle('Consumo Total por Aparelho').setX().setY('Consumo (kW/h)')
