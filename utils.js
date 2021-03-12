@@ -321,7 +321,7 @@ function getData(){
         success: function(data) {
             appData.total = data.length;
                 appData.array = data;
-
+                appData.filtered = [];
                 appData.filtered = appData.filtered.concat(appData.array);
     
                 var filters = {};
