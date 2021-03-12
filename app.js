@@ -25,15 +25,15 @@ $(function() {
                 error: function(error) {
                     localStorage.setItem('token', error.getResponseHeader('Authorization'));
                     getData();
-                    tidData = setInterval(getData, 60000);
-                    tid = setInterval(loopDevices, 2500);
+                    tidData = setInterval(getData, 600000);
+                    tid = setInterval(loopDevices, 2750);
                 },
                 dataType: "json"
             });
 
     } else {
         getData();
-        tidData = setInterval(getData, 60000);
+        tidData = setInterval(getData, 600000);
         tid = setInterval(loopDevices, 2750);
     }
     

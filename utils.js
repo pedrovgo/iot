@@ -334,6 +334,7 @@ function getData(){
                 configFilter(filters);
                 chartRender();
                 $( "#filters" ).accordion();
+                cleanFilter();
         }
      });
 }
