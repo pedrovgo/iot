@@ -1,6 +1,7 @@
 $(function() {
 
     var tid;
+    var tidData;
 
     appDataInit();
 
@@ -23,14 +24,16 @@ $(function() {
                 },
                 error: function(error) {
                     localStorage.setItem('token', error.getResponseHeader('Authorization'));
-                    getData(0);
+                    getData();
+                    tidData = setInterval(getData, 60000);
                     tid = setInterval(loopDevices, 2500);
                 },
                 dataType: "json"
             });
 
     } else {
-        getData(0);
+        getData();
+        tidData = setInterval(getData, 60000);
         tid = setInterval(loopDevices, 2750);
     }
     

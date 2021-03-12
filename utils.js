@@ -312,14 +312,7 @@ function configFilter(filters){
     }
 }
 
-function getData(from){ 
-    //$('.someBlock').preloader();
-    var body = {
-        "from" : from, "size" : appData.size,
-        "query" : {
-            "match_all": {}
-        }
-    };
+function getData(){ 
 
     $.ajax({
         url: appData.url,
